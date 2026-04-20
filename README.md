@@ -1,71 +1,100 @@
-# 🎂 Birthday Surprise V2 – A Modern & Emotional Birthday Gift
+# 💖 Happy Birthday Akka – A Special Surprise Website 🎂
 
-Celebrate someone’s birthday in a unique and heart-touching way with this new version of the "Birthday Surprise" website. This version includes beautiful animations, confetti, a photo slideshow, and a special countdown – all crafted to create an unforgettable moment. 💖
-
-> ⚠️ This is a **free version**, so some features like background music, animations and message cards are not included. Premium version includes full photo gallery, music, animations and personal message cards.
-> You can **buy the premium code** from my store [here](https://www.anujbuilds.in/products/birthday-v2).
----
-
-## 🛠 Tech Stack
-
-- ⚛️ **Next.js** – React Framework for building fast UI
-- 🎨 **Tailwind CSS** – For modern and responsive styling
-- 🎞️ **Framer Motion** – Smooth entrance and fade animations
-- 🎊 **Canvas Confetti** – Birthday celebration confetti effect
-- 🖼️ **Swiper.js** – For smooth image slideshow
+<p align="center">
+  <img src="https://img.shields.io/badge/Made%20With-Love%20💖-ff69b4?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Next.js-13+-000000?style=for-the-badge&logo=nextdotjs" />
+  <img src="https://img.shields.io/badge/TypeScript-TSX-3178c6?style=for-the-badge&logo=typescript" />
+  <img src="https://img.shields.io/badge/TailwindCSS-Styled-38bdf8?style=for-the-badge&logo=tailwindcss" />
+  <img src="https://img.shields.io/badge/Animations-Framer%20Motion-ff0055?style=for-the-badge" />
+</p>
 
 ---
 
-## 🖥 Local Setup
+## 🌸 About This Project
 
-To run this project locally, follow these steps:
+This is not just a website…
+This is a **feeling**.
+
+A small attempt to turn emotions into something visible,
+something beautiful, something unforgettable 💖
+
+Built as a **birthday surprise for my sister (Akka)**,
+this project is filled with love, memories, and gratitude.
+
+---
+
+## ✨ Features
+
+* 🎬 Cinematic intro experience
+* 💫 Floating particles background
+* 💌 Typing animation for emotional messages
+* 📸 Memory gallery
+* 🎁 Interactive gift with confetti 🎉
+* 🎶 Background music
+* 📱 Fully responsive (mobile, tablet, desktop)
+
+---
+
+## 💖 A Special Message
+
+> You are not just my sister…
+> You are my strength, my happiness, and my forever support ❤️
+>
+> Life feels more beautiful just because you are in it ✨
+>
+> This little website is just a small reflection
+> of how much you truly mean to me 💖
+>
+> **Happy Birthday, Akka 🎂**
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology      | Purpose             |
+| --------------- | ------------------- |
+| Next.js         | Framework           |
+| TypeScript      | Type Safety         |
+| Tailwind CSS    | Styling             |
+| Framer Motion   | Animations          |
+| Canvas Confetti | Celebration Effects |
+| HTML5 Audio     | Music               |
+
+---
+
+## 🚀 Getting Started
 
 ```bash
-# Clone the repository
-git clone https://github.com/Anuj579/birthday-site-v2.git
-
-# Navigate into the folder
-cd birthday-site-v2
-
-# Install dependencies
 npm install
-
-# Start the development server
 npm run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) in your browser to explore the site.
+Open 👉 http://localhost:3000
 
 ---
 
-## 🔗 Social Media
+## 📸 Customization
 
-Follow me for more emotional surprise websites and creative dev content:
+Make it personal:
 
-- 📷 Instagram: [@anujbuilds](https://instagram.com/anujbuilds)
-- 🎬 YouTube: [@anujbuilds](https://youtube.com/@anujbuilds)
-- 🐦 Twitter: [@anujbuilds](https://twitter.com/anujbuilds)
-- 💼 LinkedIn: [Anuj Chaudhary](https://linkedin.com/in/anujchaudhary549)
-
----
-
-## ⭐ Support
-
-If you found this project lovely, please consider giving it a ⭐ on [GitHub](https://github.com/Anuj579)  
-Thank you for being here! 🫶  
-Made with emotions by **Anuj** – _@anujbuilds_
+* Replace images in `/public`
+* Add your own `music.mp3`
+* Update messages with your memories
 
 ---
 
-## ⚠️ License & Usage
+## 💫 Why This Project Matters
 
-### Free Code
-- This free version is strictly for **personal use only**.  
-- You **cannot** post, upload, or share this project online in any form (e.g., Instagram reels, YouTube videos, websites, or any public platform).  
-- Using this free code publicly is **prohibited**.
-- Any violation will be considered **copyright infringement**, and I reserve the right to report it.
+Because sometimes…
+words are not enough.
 
-### Premium Code
-- The premium code can be used publicly **only if proper credit is given**:  
-  `Website idea & code by @anujbuilds`  
-- Without credit or without explicit permission, public use is **not allowed**.
+And when they aren’t,
+we build something that speaks instead 💖
+
+---
+
+## ❤️ Made With Love
+
+<p align="center">
+  Made with ❤️ by a proud sibling  
+</p>
