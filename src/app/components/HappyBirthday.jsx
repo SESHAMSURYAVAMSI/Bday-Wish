@@ -19,55 +19,49 @@ export default function HappyBirthday({ onNext }) {
     }, []);
 
     // Balloon Component
-    const Balloon = ({ color, delay = 0, x = 0 }) => (
-        <motion.div
-            className="absolute pointer-events-none"
-            style={{
-                left: `${x}%`,
-                bottom: "-2.5%",
-                zIndex: 5,
-            }}
-            animate={
-                {
-                    y: [0, -15, 0],
-                    x: [0, 5, -5, 0],
-                    rotate: [0, 3, -3, 0],
-                }
-            }
-            transition={
-                {
-                    duration: 4 + Math.random() * 2,
-                    repeat: Infinity,
-                    delay: delay,
-                    ease: "easeInOut",
-                }
-            }
-        >
-            <div className="relative w-[70px] h-[80px]">
-                {/* Balloon shape */}
-                <div
-                    className={`w-full h-full bg-gradient-to-b ${color} relative shadow-md`}
-                    style={{
-                        borderRadius: "75% 75% 80% 80% / 75% 75% 80% 80%",
-                    }}
-                >
-                    {/* Highlights */}
-                    <div className="absolute top-2 left-2 w-3 h-5 bg-white/50 rounded-full blur-[1px]" />
-                    <div className="absolute bottom-2 left-3 w-2 h-1 bg-white/30 rounded-full blur-[0.5px]" />
-                </div>
-
-                {/* Tie */}
-                <div
-                    className={`absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-[12px] h-[12px] bg-gradient-to-b ${color}`}
-                    style={{
-                        clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
-                    }}
-                />
-
+const Balloon = ({ color, delay = 0, x = 0 }) => (
+    <motion.div
+        className="absolute pointer-events-none"
+        style={{
+            left: `${x}%`,
+            bottom: "-10%", // start below screen
+            zIndex: 5,
+        }}
+        initial={{ y: 0, opacity: 1, scale: 1 }}
+        animate={{
+            y: "-120vh", // move completely to top
+            opacity: [1, 0.8, 0.6, 0.3, 0], // gradual fade
+            scale: [1, 1.05, 1.08, 1.1], // slight growth (depth feel)
+        }}
+        transition={{
+            duration: 8 + Math.random() * 4, // random speed
+            delay: delay,
+            ease: "linear",
+            repeat: Infinity,
+        }}
+    >
+        <div className="relative w-[70px] h-[80px]">
+            {/* Balloon */}
+            <div
+                className={`w-full h-full bg-gradient-to-b ${color} shadow-md`}
+                style={{
+                    borderRadius: "75% 75% 80% 80% / 75% 75% 80% 80%",
+                }}
+            >
+                <div className="absolute top-2 left-2 w-3 h-5 bg-white/50 rounded-full blur-[1px]" />
+                <div className="absolute bottom-2 left-3 w-2 h-1 bg-white/30 rounded-full blur-[0.5px]" />
             </div>
 
-        </motion.div>
-    )
+            {/* Tie */}
+            <div
+                className={`absolute bottom-[-10px] left-1/2 -translate-x-1/2 w-[12px] h-[12px] bg-gradient-to-b ${color}`}
+                style={{
+                    clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                }}
+            />
+        </div>
+    </motion.div>
+)
 
     // Cake
     const AnimatedCake = () => (
