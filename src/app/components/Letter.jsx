@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "motion/react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Mail, Heart, Sparkles, RotateCcw } from "lucide-react"
 import confetti from "canvas-confetti"
 
@@ -10,49 +10,67 @@ export default function Letter() {
     const [showText, setShowText] = useState(false)
     const [currentText, setCurrentText] = useState("")
     const [showCursor, setShowCursor] = useState(true)
+    const [showBalloons, setShowBalloons] = useState(false)
 
-    const letterText = `My Dearest Madam Jii,
+    const letterText = `Happy Birthday Jaanu 🎂💖
 
-On this very special day, I want you to know how incredibly grateful I am to have you in my life. Your birthday isn't just a celebration of another year - it's a celebration of all the joy, laughter, and beautiful memories you bring to this world.
+Ee birthday niku oka memorable day ga undali ani nenu chinna try chesa… niku nachithey chala happy 😊💫
+Incase nachakapothey please sad avvakuu… next year nee birthday ni inka chala special ga chestha, promise 🤍✨
 
-You have this amazing ability to light up any room you enter, to make people smile even on their darkest days, and to spread kindness wherever you go. Your heart is pure gold, and your spirit is absolutely infectious.
+Niku telusa… nee smile ki chala fans unnaru 😍💞
+Andhulo nenu kuda okadini… so aa smile ni eppudu dhoram cheyakuu 🥺💗
+E situation lo aina navvuthu undu… endhukante nee smile chustey naaku chala peace vasthundi 🌸
 
-Thank you for being the wonderful, amazing, absolutely fantastic person that you are. The world is so much brighter because you're in it.
+Na life lo nuvvu devudu ichina biggest gift 🎁❤️
+Nenu adhi eppatiki vodulukonu… eppudu kaapadukunta 💞
 
-Happy Birthday, beautiful soul! 🎂✨
+Mana madhya konni godavalu jaruguthai…
+kani adhey mana love emo anipisthundi 🥺💔➡️💖
 
-With all my love and warmest wishes,
-Forever Yours 💕`
+Nannu nuvvu treat chesina vidham,
+anta prema… anta care… naku ekkada dorakaledu 💕
 
+Future lo naa life partner kuda anta love ivvado emo ani anipisthundi…
+because nuvvu naaku chala special 🥹❤️
+
+Love you a lot ❤️‍🔥
+Miss you more than anyone can ever understand 🫶🥺
+
+Happy Birthday ra naa pedda kothi 🐒😂💖
+Nannu eppudu vadili vellavu kada… promise cheyyi 🤍🥹
+E roj anta happy ga navvuthu undali 😘🎉✨
+`
+
+    // ✨ Typing + subtle celebration
     useEffect(() => {
-        if (showText) {
-            let index = 0
-            const timer = setInterval(() => {
-                if (index < letterText.length) {
-                    setCurrentText(letterText.slice(0, index + 1))
-                    index++
+        if (!showText) return
 
-                } else {
-                    clearInterval(timer)
-                    setShowCursor(false)
-                    confetti({
-                        particleCount: 50,
-                        spread: 70,
-                        origin: { y: 0.6 },
-                        colors: ["#ff69b4", "#ff1493", "#9370db", "#8a2be2", "#ffd700"],
-                    })
-                }
-            }, 30)
+        let index = 0
+        const timer = setInterval(() => {
+            if (index < letterText.length) {
+                setCurrentText(letterText.slice(0, index + 1))
+                index++
+            } else {
+                clearInterval(timer)
+                setShowCursor(false)
 
-            return () => clearInterval(timer)
-        }
-    }, [showText, letterText])
+                // 🎉 light confetti (reduced)
+                confetti({
+                    particleCount: 40,
+                    spread: 60,
+                    origin: { y: 0.6 },
+                })
+
+                setShowBalloons(true)
+            }
+        }, 25)
+
+        return () => clearInterval(timer)
+    }, [showText])
 
     const handleOpenLetter = () => {
         setIsOpen(true)
-        setTimeout(() => {
-            setShowText(true)
-        }, 800)
+        setTimeout(() => setShowText(true), 700)
     }
 
     const handleReset = () => {
@@ -60,147 +78,128 @@ Forever Yours 💕`
         setShowText(false)
         setCurrentText("")
         setShowCursor(true)
+        setShowBalloons(false)
     }
 
+    // 🌌 Minimal symbols (sky feel)
+    const symbols = ["❤️", "✨"]
+
     return (
-        <motion.div
-            className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-        >
-            <div className="max-w-4xl w-full">
-                <motion.div
-                    className="text-center mb-8"
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                >
-                    <h1 className="text-4xl md:text-6xl py-1 md:py-2 font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 mb-4">
-                        A Special Letter
-                    </h1>
-                    <p className="text-lg text-purple-300">Just for you, on your special day 💌</p>
-                </motion.div>
+        <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
 
-                <motion.div
-                    className="relative w-full h-full flex justify-center "
-                    initial={{ scale: 0, rotate: -10 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{
-                        delay: 0.5,
-                        type: "spring",
-                        stiffness: 200,
-                    }}
-                >
-                    <AnimatePresence mode="wait">
-                        {!isOpen ? (
+            {/* 🌌 Subtle Floating "Stars" */}
+            {showBalloons && (
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    {[...Array(10)].map((_, i) => {
+                        const side = Math.floor(Math.random() * 4)
+                        const size = 10 + Math.random() * 12
+
+                        let initial = {}
+                        let animate = {}
+
+                        if (side === 0) {
+                            initial = { x: `${Math.random() * 100}vw`, y: "110%" }
+                            animate = { y: "-20%" }
+                        } else if (side === 1) {
+                            initial = { x: "-5%", y: `${Math.random() * 100}vh` }
+                            animate = { x: "20%" }
+                        } else if (side === 2) {
+                            initial = { x: "105%", y: `${Math.random() * 100}vh` }
+                            animate = { x: "80%" }
+                        } else {
+                            initial = { x: `${Math.random() * 100}vw`, y: "-10%" }
+                            animate = { y: "20%" }
+                        }
+
+                        return (
                             <motion.div
-                                key="envelope"
-                                className="relative cursor-pointer"
-                                whileHover={{ scale: 1.05, rotate: 2 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={handleOpenLetter}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ rotateX: -90, opacity: 0 }}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <div className="w-80 h-52 bg-gradient-to-br from-pink-200 to-purple-200 rounded-2xl shadow-2xl border-2 border-pink-300 relative overflow-hidden">
-                                    <div className="absolute top-0 left-0 w-full h-26 bg-gradient-to-br from-pink-300 to-purple-300 transform origin-top"></div>
-                                    <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-br from-pink-100 to-purple-100"></div>
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <Mail className="w-16 h-16 text-pink-500" />
-                                    </div>
-                                    <div className="absolute top-4 right-4">
-                                        <Heart className="w-6 h-6 text-red-500 fill-current" />
-                                    </div>
-                                    <div className="absolute bottom-4 left-4">
-                                        <Sparkles className="w-6 h-6 text-yellow-500" />
-                                    </div>
-                                    <motion.div
-                                        className="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-pink-700 text-base font-semibold"
-                                        animate={{ opacity: [0.5, 1, 0.5] }}
-                                        transition={{ duration: 1.5, repeat: Infinity }}
-                                    >
-                                        Click to open
-                                    </motion.div>
-                                </div>
-                            </motion.div>
-                        ) : (
-                            <motion.div
-                                key="letter"
-                                className="w-full max-w-2xl rounded-2xl shadow-2xl border-2 border-pink-300 p-8 relative transition-all"
-                                initial={{ rotateX: -90, opacity: 0 }}
-                                animate={{ rotateX: 0, opacity: 1 }}
-                                exit={{ opacity: 0, scale: 0.2 }}
-                                transition={{ duration: 0.8, type: "spring" }}
-                                style={{
-                                    background:
-                                        "linear-gradient(135deg, #fce7f3 0%, #fae8ff 25%, #e0e7ff 50%, #fdf2f8 75%, #fce7f3 100%)",
+                                key={i}
+                                initial={{ ...initial, opacity: 0 }}
+                                animate={{
+                                    ...animate,
+                                    opacity: [0.2, 0.8, 0.2],
                                 }}
+                                transition={{
+                                    duration: 8 + Math.random() * 4,
+                                    repeat: Infinity,
+                                    delay: Math.random() * 4,
+                                    ease: "easeInOut",
+                                }}
+                                style={{ fontSize: `${size}px` }}
+                                className="absolute"
                             >
-                                <div className="text-center mb-6">
-                                    <motion.div
-                                        className="inline-block"
-                                        animate={{ rotate: [0, 5, -5, 0] }}
-                                        transition={{ duration: 3, repeat: Infinity }}
-                                    >
-                                        <Heart className="w-12 h-12 text-red-500 fill-current mx-auto mb-3" />
-                                    </motion.div>
-                                </div>
-
-                                <div className="min-h-72 max-h-72 overflow-y-auto text-gray-700 leading-relaxed">
-                                    {showText && (
-                                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-3 mr-2 ">
-                                            <div className="whitespace-pre-wrap font-cute">
-                                                {currentText}
-                                                {showCursor && (
-                                                    <motion.span
-                                                        className="inline-block w-0.5 h-4 bg-purple-600 ml-1"
-                                                        animate={{ opacity: [0, 1, 0] }}
-                                                        transition={{ duration: 0.8, repeat: Infinity }}
-                                                    />
-                                                )}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </div>
-
-                                {currentText === letterText && (
-                                    <motion.div
-                                        className="text-center mt-6"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: 1 }}
-                                    >
-                                        <button
-                                            onClick={handleReset}
-                                            className="inline-flex items-center gap-2 bg-white/60 text-pink-600 font-medium border border-pink-400 px-5 py-2 rounded-full hover:bg-pink-100 transition-all"
-                                        >
-                                            <RotateCcw className="w-4 h-4" />
-                                            Read Again
-                                        </button>
-                                    </motion.div>
-                                )}
-
-                                <div className="absolute top-4 left-4">
-                                    <Sparkles className="w-6 h-6 text-yellow-500" />
-                                </div>
-                                <div className="absolute top-4 right-4">
-                                    <Heart className="w-6 h-6 text-rose-500 fill-current" />
-                                </div>
-                                <div className="absolute bottom-4 left-4">
-                                    <Heart className="w-6 h-6 text-pink-500 fill-current" />
-                                </div>
-                                <div className="absolute bottom-4 right-4">
-                                    <Sparkles className="w-6 h-6 text-purple-500" />
-                                </div>
+                                {symbols[Math.floor(Math.random() * symbols.length)]}
                             </motion.div>
+                        )
+                    })}
+                </div>
+            )}
 
-                        )}
-                    </AnimatePresence>
-                </motion.div>
+            <div className="max-w-3xl w-full">
+
+                {/* Header */}
+                <div className="text-center mb-8">
+                    <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent">
+                        A Special Letter 💌
+                    </h1>
+                    <p className="text-purple-300 mt-2">Just for you ✨</p>
+                </div>
+
+                <AnimatePresence mode="wait">
+                    {!isOpen ? (
+                        // 📩 Envelope
+                        <motion.div
+                            key="envelope"
+                            onClick={handleOpenLetter}
+                            className="cursor-pointer flex justify-center"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                        >
+                            <div className="w-80 h-52 bg-gradient-to-br from-pink-200 to-purple-200 rounded-2xl shadow-xl flex items-center justify-center relative">
+                                <Mail className="w-16 h-16 text-pink-500" />
+                                <div className="absolute bottom-3 text-pink-700 animate-pulse">
+                                    Click to open
+                                </div>
+                            </div>
+                        </motion.div>
+                    ) : (
+                        // 💌 Letter
+                        <motion.div
+                            key="letter"
+                            className="p-8 rounded-2xl shadow-2xl border border-pink-300 relative"
+                            style={{
+                                background: "linear-gradient(135deg, #fce7f3, #e0e7ff)",
+                            }}
+                            initial={{ rotateX: -90 }}
+                            animate={{ rotateX: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <div className="text-center mb-4">
+                                <Heart className="w-10 h-10 mx-auto text-red-500 fill-current animate-bounce" />
+                            </div>
+
+                            <div className="h-72 overflow-y-auto text-gray-700 whitespace-pre-wrap">
+                                {currentText}
+                                {showCursor && (
+                                    <span className="inline-block w-1 h-4 bg-purple-600 ml-1 animate-pulse" />
+                                )}
+                            </div>
+
+                            {currentText === letterText && (
+                                <div className="text-center mt-6">
+                                    <button
+                                        onClick={handleReset}
+                                        className="flex items-center gap-2 mx-auto px-5 py-2 bg-white border border-pink-400 rounded-full text-pink-600 hover:bg-pink-100"
+                                    >
+                                        <RotateCcw className="w-4 h-4" />
+                                        Read Again
+                                    </button>
+                                </div>
+                            )}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
-        </motion.div>
+        </div>
     )
 }
