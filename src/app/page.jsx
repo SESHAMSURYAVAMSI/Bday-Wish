@@ -16,15 +16,39 @@ export default function BirthdayApp() {
   const [currentScreen, setCurrentScreen] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
 
+
+  // 🎵 ADD THIS FUNCTION
+  const playMusic = () => {
+    const audio = document.getElementById("bg-music")
+
+    if (audio) {
+      audio.volume = 0
+      audio.play().catch((err) => {
+        console.log("Audio blocked:", err)
+      })
+
+      let vol = 0
+      const interval = setInterval(() => {
+        if (vol < 1) {
+          vol += 0.1
+          audio.volume = vol
+        } else {
+          clearInterval(interval)
+        }
+      }, 200)
+    }
+  }
+
+
   // 🎯 AUTO HANDLE NEXT JUNE 16
   const getNextBirthday = () => {
     const now = new Date()
     const currentYear = now.getFullYear()
 
-    let birthday = new Date(`${currentYear}-04-28T00:00:00`)
+    let birthday = new Date(`${currentYear}-06-16T00:00:00`)
 
     if (now.getTime() > birthday.getTime()) {
-      birthday = new Date(`${currentYear}-04-28T00:00:00`)
+      birthday = new Date(`${currentYear}-06-16T00:00:00`)
     }
 
     // This is every year repeating of jaanu
@@ -59,7 +83,10 @@ export default function BirthdayApp() {
     ) : (
       <Celebration
         key="celebration"
-        onNext={() => setCurrentScreen(1)}
+        onNext={() => {
+          playMusic()   // 🎵 ADDED HERE
+          setCurrentScreen(1)
+        }}
       />
     ),
     <HappyBirthday key="happy" onNext={() => setCurrentScreen(2)} />,
@@ -69,6 +96,11 @@ export default function BirthdayApp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-950/30 via-black to-purple-950/30 overflow-hidden relative">
+
+      {/* 🎵 AUDIO ADDED HERE */}
+      <audio id="bg-music" loop>
+        <source src="/audio/jaanu.mp3" type="audio/mpeg" />
+      </audio>
 
       {/* Background glow */}
       <div className="fixed inset-0 z-0 blur-[120px] opacity-20"
