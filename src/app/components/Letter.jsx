@@ -14,9 +14,6 @@ export default function Letter() {
 
     const letterText = `Happy Birthday Jaanu 🎂💖
 
-Ee birthday niku oka memorable day ga undali ani nenu chinna try chesa… niku nachithey chala happy 😊💫
-Incase nachakapothey please sad avvakuu… next year nee birthday ni inka chala special ga chestha, promise 🤍✨
-
 Niku telusa… nee smile ki chala fans unnaru 😍💞
 Andhulo nenu kuda okadini… so aa smile ni eppudu dhoram cheyakuu 🥺💗
 E situation lo aina navvuthu undu… endhukante nee smile chustey naaku chala peace vasthundi 🌸
@@ -38,7 +35,11 @@ Miss you more than anyone can ever understand 🫶🥺
 
 Happy Birthday ra naa pedda kothi 🐒😂💖
 Nannu eppudu vadili vellavu kada… promise cheyyi 🤍🥹
-E roj anta happy ga navvuthu undali 😘🎉✨
+E roju anta happy ga navvuthu undali 😘🎉✨
+
+Ee birthday niku oka memorable day ga undali ani nenu chinna try chesa… niku nachithey chala happy 😊💫
+Incase nachakapothey it's ok no prblm … next year nee birthday ni inka chala special ga chestha, promise 🤍✨ 
+Sry chala try chesa but images emi lev vunna vatitho try chesa i hope nxt time i will do better than this 🥹❤️
 `
 
     // ✨ Typing + subtle celebration

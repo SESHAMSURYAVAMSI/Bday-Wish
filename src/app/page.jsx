@@ -45,12 +45,12 @@ export default function BirthdayApp() {
     const now = new Date()
     const currentYear = now.getFullYear()
 
-    let birthday = new Date(`${currentYear}-06-16T00:00:00`)
-    // let birthday = new Date(`${currentYear}-04-16T00:00:00`)
+    // let birthday = new Date(`${currentYear}-06-16T00:00:00`)
+    let birthday = new Date(`${currentYear}-04-16T00:00:00`)
 
     if (now.getTime() > birthday.getTime()) {
-      birthday = new Date(`${currentYear}-06-16T00:00:00`)
-      // birthday = new Date(`${currentYear}-04-16T00:00:00`)
+      // birthday = new Date(`${currentYear}-06-16T00:00:00`)
+      birthday = new Date(`${currentYear}-04-16T00:00:00`)
     }
 
     // This is every year repeating of jaanu
