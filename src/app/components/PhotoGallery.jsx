@@ -11,11 +11,11 @@ import 'swiper/css/pagination'
 export default function PhotoGallery({ onNext }) {
 
     const photos = [
-        { id: 1, src: "/images/1.png" },
+        { id: 5, src: "/images/5.png" },
         { id: 2, src: "/images/2.jpg" },
         { id: 3, src: "/images/3.png" },
         { id: 4, src: "/images/4.jpeg" },
-        { id: 5, src: "/images/5.png" },
+        { id: 1, src: "/images/1.png" },
         // { id: 6, src: "/images/2.jpg" },
         // { id: 8, src: "/images/3.jpg"},
         // { id: 7, src: "/images/4.jpg"},
@@ -66,7 +66,7 @@ export default function PhotoGallery({ onNext }) {
                     }}
                     pagination={true}
                     modules={[EffectCube, Pagination]}
-                    className="mySwiper h-[350px] md:h-[450px]" // adjust height as needed
+                    className="mySwiper h-[450px] md:h-[450px]" // adjust height as needed
                 >
                     {photos.map((photo, index) => (
                         <SwiperSlide key={photo.id}>

@@ -24,7 +24,7 @@ Nenu adhi eppatiki vodulukonu… eppudu kaapadukunta 💞
 Mana madhya konni godavalu jaruguthai…
 kani adhey mana love emo anipisthundi 🥺💔➡️💖
 
-Nannu nuvvu treat chesina vidham,
+Nannu nuvvu treat chesina vidhanam,
 anta prema… anta care… naku ekkada dorakaledu 💕
 
 Future lo naa life partner kuda anta love ivvado emo ani anipisthundi…
@@ -36,6 +36,10 @@ Miss you more than anyone can ever understand 🫶🥺
 Happy Birthday ra naa pedda kothi 🐒😂💖
 Nannu eppudu vadili vellavu kada… promise cheyyi 🤍🥹
 E roju anta happy ga navvuthu undali 😘🎉✨
+
+I know niku nenu antey asahyam ani adi nenu chesukunnadi i derserve that 🥺 
+kani na promise ni break cheyyalenu kada andukey ninnu happy ga vunchaniki edoo try chestunna 🫶 
+If God ever gives me one more chance to meet you, the first thing I would want tolook into your eyes and tell you how sorry I am. I truly want to ask for your forgiveness with all my heart. 😔💔
 
 Ee birthday niku oka memorable day ga undali ani nenu chinna try chesa… niku nachithey chala happy 😊💫
 Incase nachakapothey it's ok no prblm … next year nee birthday ni inka chala special ga chestha, promise 🤍✨ 
