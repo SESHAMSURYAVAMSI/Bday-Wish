@@ -29,6 +29,7 @@ anta prema… anta care… naku ekkada dorakaledu 💕
 
 Future lo naa life partner kuda anta love ivvado emo ani anipisthundi…
 because nuvvu naaku chala special 🥹❤️
+n u r the person i never want to loose in my life 🥺
 
 Love you a lot ❤️‍🔥
 Miss you more than anyone can ever understand 🫶🥺
