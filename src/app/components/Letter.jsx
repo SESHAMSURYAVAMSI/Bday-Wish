@@ -45,6 +45,8 @@ If God ever gives me one more chance to meet you, the first thing I would want t
 Ee birthday niku oka memorable day ga undali ani nenu chinna try chesa… niku nachithey chala happy 😊💫
 Incase nachakapothey it's ok no prblm … next year nee birthday ni inka chala special ga chestha, promise 🤍✨ 
 Sry chala try chesa but images emi lev vunna vatitho try chesa i hope nxt time i will do better than this 🥹❤️
+At last want to say one thing that u r the person i planned for my entire future and the person i never want to loose in my life 🫶🥺 
+Once again many more happy returns of the dayyyyy 😘🎉✨
 `
 
     // ✨ Typing + subtle celebration
